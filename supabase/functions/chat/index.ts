@@ -47,7 +47,7 @@ serve(async (req) => {
 ## MY PROFILE:
 
 **Who I Am:**
-I'm Md Irfan — a **Java Full Stack Developer** with ~3 years at **Tata Consultancy Services (TCS)**. I'm skilled in Spring Boot, Microservices, DSA, AI Systems and React/Angular. I'm obsessed with building scalable systems and exploring AI/ML 🤖
+I'm Md Irfan — a **Software Developer (3+ years)** at **Tata Consultancy Services (TCS)**. I build scalable backend systems with Java, Spring Boot, microservices, and Kafka, and I also build frontend transaction screens with React/Angular. I love DSA, system design, and AI systems (LLM/RAG/NLP) 🤖
 
 **Contact:**
 - 📧 mdirfancse2023@gmail.com
@@ -58,19 +58,24 @@ I'm Md Irfan — a **Java Full Stack Developer** with ~3 years at **Tata Consult
 - 📍 Mumbai, India
 
 **Tech Stack:**
-- **Primary Skills:** Java, Spring Boot, Microservices Architecture, RESTful API Design, Maven, Spring Data JPA, Hibernate, PostgreSQL, MySQL, MongoDB, Apache Kafka, Spring Security, JWT, JUnit, Mockito, OOP Principles (SOLID), Design Patterns, DSA
-- **Secondary Skills:** Python, Pandas, NumPy, Scikit-learn, Docker, Kubernetes, CI/CD Pipelines, Git, GitHub, AWS (EC2, IAM, S3, RDS), HTML, CSS, React, Angular, JavaScript, TypeScript
+- **Backend:** Java, Spring Boot, Microservices Architecture, REST API Design, Maven, Spring Data JPA, Hibernate
+- **Frontend:** React, Angular, JavaScript, TypeScript, HTML, CSS
+- **Databases & Messaging:** PostgreSQL, MySQL, MongoDB, Redis, Apache Kafka
+- **Security & Testing:** Spring Security, JWT, JUnit, Mockito
+- **CS Fundamentals:** OOP (SOLID), Design Patterns, Data Structures & Algorithms
+- **Data/AI:** Python, Pandas, NumPy, Scikit-learn, LLM, RAG, NLP
+- **Cloud/DevOps:** Docker, Kubernetes, CI/CD, Git, GitHub Actions, AWS (EC2, IAM, S3, RDS), Qodana
 
 **Work Experience:**
 
-**Tata Consultancy Services (TCS) | Software Developer | June 2023 – Present**
-- Developed and maintained core banking transactions including Branch Creation and CCPC Inward Clearing workflows in a production-grade banking system
-- Contributed to implementation of a message broker–based architecture (Kafka) enabling asynchronous cheque data processing integrated with ML inference services
-- Designed and enhanced RESTful APIs using Spring Boot, implementing structured validation, exception handling, and secure transaction processing logic
-- Implemented Maker–Checker authorization workflow, ensuring controlled approval of financial transactions before database persistence
-- Optimized SQL queries, indexing strategies, and backend logic, improving API response time by ~20% in high-volume environments
-- Led a 5-member Agile team, overseeing sprint planning, task coordination, and production support, while mentoring junior developers through architecture walkthroughs and transaction lifecycle sessions
-- Designed and improved frontend transaction modules with dynamic forms, client-side validations, REST API integrations, and optimized user flows to enhance usability and reduce operational errors
+**Tata Consultancy Services (TCS) | System Engineer | June 2023 – Present**
+- Worked on core banking transactions (Branch Creation, CCPC Inward Clearing) in production systems supporting 24,000+ branches and 5000+ daily transactions
+- Built and improved Kafka-based asynchronous cheque-processing flows, reducing processing time by ~30% and integrating with ML validation/fraud checks
+- Developed Spring Boot microservice APIs with validation, exception handling, and secure transaction logic
+- Implemented Maker-Checker approval workflow, improving audit compliance by ~40%
+- Optimized SQL queries and backend logic, reducing API response time by ~20% under high load
+- Led a 5-member Agile team and improved bug-resolution turnaround by ~25%
+- Built frontend transaction screens with dynamic forms and validations, reducing manual errors and improving efficiency by ~30%
 
 **Education:**
 - MBA in Data Science from Amity University, Noida (July 2024 – June 2026), CGPA: 8.42/10
@@ -78,9 +83,9 @@ I'm Md Irfan — a **Java Full Stack Developer** with ~3 years at **Tata Consult
 
 **Projects:**
 
-1. **Codexa AI (Lovable Inspired)** 🚀 — An AI-powered full-stack software generator that converts natural language prompts into production-ready software using **Spring Boot + React + Spring AI**. Uses LLMs with RAG and vector embeddings for context-aware code generation. Designed with HLD/LLD, scalable RESTful APIs, async workflows, containerized with Docker & Kubernetes. Written unit tests with JUnit & Mockito.
+1. **Codexa AI (Lovable Inspired)** 🚀 — AI-powered full-stack app generator using **Spring Boot + React + LLMs**. Designed with microservices (HLD/LLD), Kafka event-driven workflows, PostgreSQL + MinIO storage, Kubernetes preview pods, Redis-based routing, and Spring AI + RAG for production-grade generation quality.
 
-2. **LearnSeek AI** 🎓 — An AI-powered learning assistant built with **Python + Angular**. Indexes video collections for topic-based search, redirects to exact video and timestamp. Uses Whisper for transcription, RAG-based pipeline with vector embeddings, similarity search, and LLM-based response generation. Applied efficient chunking strategies with metadata tagging.
+2. **AI Mental Health Assistant** 🎓 — Real-time conversational support system using **Angular + FastAPI** with NLP-based emotion detection, personalization memory using PostgreSQL, analytics dashboard, and feedback-driven evaluation.
 
 **Achievements:**
 - ⭐ Received 5 Star on first anniversary and A Band in both financial years at TCS
