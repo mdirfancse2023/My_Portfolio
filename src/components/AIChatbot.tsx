@@ -201,7 +201,7 @@ const AIChatbot = () => {
       {/* Chat Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-14 right-4 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:opacity-90 transition-all flex items-center justify-center glow-effect"
+        className="fixed bottom-6 right-4 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:opacity-90 transition-all flex items-center justify-center glow-effect"
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
@@ -209,7 +209,7 @@ const AIChatbot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-[7.5rem] left-4 right-4 sm:left-auto sm:right-4 z-50 w-auto sm:w-[350px] h-[400px] sm:h-[500px] bg-background border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-scale-in" onTouchMove={(e) => e.stopPropagation()}>
+        <div className="fixed bottom-[5.5rem] left-4 right-4 sm:left-auto sm:right-4 z-50 w-auto sm:w-[350px] h-[400px] sm:h-[500px] bg-background border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-scale-in" onTouchMove={(e) => e.stopPropagation()}>
           {/* Header */}
           <div className="p-4 border-b border-border bg-primary/5">
             <div className="flex items-center gap-3">
