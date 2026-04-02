@@ -71,8 +71,9 @@ This repo includes:
 - `DOCKERHUB_TOKEN`
 - `GKE_PROJECT`
 - `GKE_CLUSTER`
-- `GKE_ZONE`
-- `GCP_SA_KEY` (JSON key of a GCP service account with GKE deploy permissions)
+- `GKE_REGION`
+- `GCP_WIF_PROVIDER` (Workload Identity Provider resource name)
+- `GCP_SA_EMAIL` (Service account email used by GitHub Actions)
 
 ### How it deploys
 

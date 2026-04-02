@@ -8,7 +8,7 @@ on:
 env:
   IMAGE_NAME: myportfolio
   GKE_CLUSTER: ${{ secrets.GKE_CLUSTER }}
-  GKE_ZONE: ${{ secrets.GKE_ZONE }}
+  GKE_REGION: ${{ secrets.GKE_REGION }}
   GKE_PROJECT: ${{ secrets.GKE_PROJECT }}
   K8S_NAMESPACE: default
 
@@ -40,7 +40,8 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ secrets.GCP_SA_EMAIL }}
 
       - name: Set up gcloud
         uses: google-github-actions/setup-gcloud@v2
@@ -51,10 +52,11 @@ jobs:
         run: gcloud components install gke-gcloud-auth-plugin --quiet
 
       - name: Configure kubectl for GKE
-        run: gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE" --project "$GKE_PROJECT"
+        run: gcloud container clusters get-credentials "$GKE_CLUSTER" --region "$GKE_REGION" --project "$GKE_PROJECT"
 
       - name: Deploy to GKE
         run: |
-          sed "s|DOCKERHUB_USERNAME/myportfolio:latest|${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}|g" k8s/deployment.yaml | kubectl apply -n "$K8S_NAMESPACE" -f -
+          kubectl apply -n "$K8S_NAMESPACE" -f k8s/deployment.yaml
           kubectl apply -n "$K8S_NAMESPACE" -f k8s/service.yaml
+          kubectl set image deployment/myportfolio myportfolio=${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} -n "$K8S_NAMESPACE"
           kubectl rollout status deployment/myportfolio -n "$K8S_NAMESPACE" --timeout=120s

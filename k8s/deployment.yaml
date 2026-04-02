@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: myportfolio
-          image: DOCKERHUB_USERNAME/myportfolio:latest
+          image: mdirfancse2023/myportfolio:latest
           ports:
             - containerPort: 80
           resources:

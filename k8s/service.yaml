@@ -6,6 +6,7 @@ metadata:
     app: myportfolio
 spec:
   type: LoadBalancer
+  loadBalancerIP: 34.180.9.45
   selector:
     app: myportfolio
   ports:
