@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myportfolio
+  labels:
+    app: myportfolio
+spec:
+  type: LoadBalancer
+  selector:
+    app: myportfolio
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
