@@ -19,6 +19,7 @@ spec:
           image: mdirfancse2023/myportfolio:latest
           ports:
             - containerPort: 80
+            - containerPort: 443
           resources:
             requests:
               cpu: 100m
