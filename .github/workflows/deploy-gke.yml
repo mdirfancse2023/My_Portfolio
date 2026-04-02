@@ -9,6 +9,7 @@ env:
   IMAGE_NAME: myportfolio
   GKE_CLUSTER: ${{ secrets.GKE_CLUSTER }}
   GKE_REGION: ${{ secrets.GKE_REGION }}
+  GKE_ZONE: ${{ secrets.GKE_ZONE }}
   GKE_PROJECT: ${{ secrets.GKE_PROJECT }}
   K8S_NAMESPACE: default
 
@@ -55,7 +56,15 @@ jobs:
         run: gcloud components install gke-gcloud-auth-plugin --quiet
 
       - name: Configure kubectl for GKE
-        run: gcloud container clusters get-credentials "$GKE_CLUSTER" --region "$GKE_REGION" --project "$GKE_PROJECT"
+        run: |
+          if [ -n "$GKE_REGION" ]; then
+            gcloud container clusters get-credentials "$GKE_CLUSTER" --region "$GKE_REGION" --project "$GKE_PROJECT"
+          elif [ -n "$GKE_ZONE" ]; then
+            gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE" --project "$GKE_PROJECT"
+          else
+            echo "Error: set either GKE_REGION or GKE_ZONE GitHub secret."
+            exit 1
+          fi
 
       - name: Deploy to GKE
         run: |
