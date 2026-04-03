@@ -14,12 +14,9 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM nginx:1.27-alpine
-RUN apk add --no-cache openssl && \
-    openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/nginx/cert.key -out /etc/nginx/cert.crt -subj "/O=Acme Co/CN=Kubernetes Ingress Controller Fake Certificate"
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+FROM caddy:2-alpine
+COPY --from=builder /app/dist /usr/share/caddy
+COPY Caddyfile /etc/caddy/Caddyfile
 
 EXPOSE 80
 EXPOSE 443
-CMD ["nginx", "-g", "daemon off;"]

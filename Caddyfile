@@ -1,0 +1,17 @@
+{
+    # We use your email to register Let's Encrypt/ZeroSSL certificates
+    email mdirfancse2023@gmail.com
+}
+
+# Your public domain
+app.34.180.9.45.sslip.io {
+    root * /usr/share/caddy
+    encode gzip
+    try_files {path} /index.html
+    file_server
+}
+
+# Also serve on HTTP for healthchecks or IP access, redirecting to HTTPS
+http://34.180.9.45 {
+    redir https://app.34.180.9.45.sslip.io{uri}
+}
