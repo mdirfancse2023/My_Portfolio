@@ -28,7 +28,7 @@ Example:
 supabase secrets set OPENROUTER_API_KEY=your_key_here
 supabase secrets set OPENROUTER_MODEL=google/gemini-2.5-flash
 supabase secrets set APP_ORIGIN=https://your-domain.com
-supabase secrets set APP_TITLE="Irfan Portfolio"
+supabase secrets set APP_TITLE="Md Irfan | Software Developer"
 supabase functions deploy chat
 ```
 

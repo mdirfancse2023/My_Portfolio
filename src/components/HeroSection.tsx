@@ -110,8 +110,8 @@ const HeroSection = () => {
             <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
           </a>
           <a
-            href="/Md_Irfan_Resume.pdf"
-            download="Md_Irfan_Resume.pdf"
+            href="/Md_Irfan_Resume_Software_Developer_3YOE.pdf"
+            download="Md_Irfan_Resume_Software_Developer_3YOE.pdf"
             className="flex items-center gap-2 px-8 py-4 border border-border rounded-xl font-semibold hover:bg-secondary transition-all hover-lift"
           >
             <Download size={18} />
