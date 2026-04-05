@@ -2,16 +2,13 @@ import { useState, useEffect } from "react";
 import { ArrowDown, Download, Github, Linkedin, Mail, Code2, Trophy, Phone } from "lucide-react";
 
 const roles = [
-  { title: "Languages: Java, Python", color: "text-emerald-400" },
-  { title: "Backend: Spring Boot, Microservices, REST APIs, Spring Security, JPA, Hibernate, Kafka", color: "text-rose-400" },
-  { title: "Databases: PostgreSQL, MySQL, MongoDB", color: "text-violet-400" },
-  { title: "Frontend: React, Angular, JavaScript, TypeScript, HTML, CSS", color: "text-pink-400" },
-  { title: "DevOps: Docker, Kubernetes, CI/CD, Git, Maven", color: "text-lime-400" },
-  { title: "Cloud: AWS (EC2, IAM, S3, RDS)", color: "text-cyan-400" },
-  { title: "AI/ML: Spring AI, LLMs, RAG", color: "text-fuchsia-400" },
-  { title: "Data Science: Pandas, NumPy, Scikit-learn", color: "text-teal-300" },
-  { title: "Testing: JUnit, Mockito, Maven", color: "text-red-400" },
-  { title: "CS Fundamentals: DSA, OOP (SOLID), Design Patterns", color: "text-indigo-400" },
+  { title: "Backend: Java, Spring Boot, Microservices, REST APIs, Maven, JPA, Hibernate", color: "text-rose-400" },
+  { title: "Frontend: React, Angular, TypeScript, HTML, CSS", color: "text-pink-400" },
+  { title: "Databases & Messaging: PostgreSQL, MySQL, MongoDB, Redis, Kafka", color: "text-violet-400" },
+  { title: "Security & Testing: Spring Security, JWT, JUnit, Mockito", color: "text-emerald-400" },
+  { title: "CS Fundamentals: OOP, Design Patterns, Data Structures & Algorithms", color: "text-indigo-400" },
+  { title: "Data, ML & AI Tools: Python, Pandas, NumPy, Scikit-learn, LLMs, RAG", color: "text-teal-300" },
+  { title: "Cloud, DevOps & Tools: Docker, Kubernetes, CI/CD, Git, AWS", color: "text-cyan-400" },
 ];
 
 const HeroSection = () => {
