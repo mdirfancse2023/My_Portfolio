@@ -1,21 +1,14 @@
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: "Languages",
-      skills: [
-        { name: "Java", level: 95 },
-        { name: "Python", level: 80 },
-      ],
-    },
-    {
       title: "Backend",
       skills: [
+        { name: "Java", level: 95 },
         { name: "Spring Boot", level: 92 },
         { name: "Microservices Architecture", level: 90 },
         { name: "RESTful API Design", level: 95 },
+        { name: "Maven", level: 85 },
         { name: "Spring Data JPA & Hibernate", level: 88 },
-        { name: "Spring Security & JWT", level: 88 },
-        { name: "Apache Kafka", level: 78 },
       ],
     },
     {
@@ -23,58 +16,25 @@ const SkillsSection = () => {
       skills: [
         { name: "React", level: 88 },
         { name: "Angular", level: 82 },
-        { name: "JavaScript", level: 90 },
-        { name: "TypeScript", level: 88 },
-        { name: "HTML", level: 90 },
-        { name: "CSS", level: 88 },
+        { name: "JavaScript / TypeScript", level: 90 },
+        { name: "HTML / CSS", level: 90 },
       ],
     },
     {
-      title: "Databases",
+      title: "Databases & Messaging",
       skills: [
         { name: "PostgreSQL", level: 88 },
         { name: "MySQL", level: 90 },
         { name: "MongoDB", level: 82 },
+        { name: "Redis", level: 80 },
+        { name: "Apache Kafka", level: 78 },
       ],
     },
     {
-      title: "DevOps",
+      title: "Security & Testing",
       skills: [
-        { name: "Docker", level: 85 },
-        { name: "Kubernetes", level: 80 },
-        { name: "CI/CD Pipelines", level: 75 },
-        { name: "Git & GitHub", level: 92 },
-        { name: "Maven", level: 85 },
-      ],
-    },
-    {
-      title: "Cloud",
-      skills: [
-        { name: "AWS EC2", level: 78 },
-        { name: "AWS IAM", level: 76 },
-        { name: "AWS S3", level: 80 },
-        { name: "AWS RDS", level: 78 },
-      ],
-    },
-    {
-      title: "AI/ML",
-      skills: [
-        { name: "Spring AI", level: 82 },
-        { name: "LLMs", level: 80 },
-        { name: "RAG", level: 78 },
-      ],
-    },
-    {
-      title: "Data Science",
-      skills: [
-        { name: "Pandas", level: 75 },
-        { name: "NumPy", level: 75 },
-        { name: "Scikit-learn", level: 72 },
-      ],
-    },
-    {
-      title: "Testing",
-      skills: [
+        { name: "Spring Security", level: 88 },
+        { name: "JWT", level: 88 },
         { name: "JUnit", level: 85 },
         { name: "Mockito", level: 85 },
       ],
@@ -82,10 +42,28 @@ const SkillsSection = () => {
     {
       title: "CS Fundamentals",
       skills: [
-        { name: "DSA", level: 90 },
-        { name: "OOP", level: 88 },
-        { name: "SOLID Principles", level: 88 },
+        { name: "OOP Principles (SOLID)", level: 88 },
         { name: "Design Patterns", level: 85 },
+        { name: "Data Structures & Algorithms", level: 90 },
+      ],
+    },
+    {
+      title: "Data, ML & AI Tools",
+      skills: [
+        { name: "Python", level: 80 },
+        { name: "Pandas & NumPy", level: 75 },
+        { name: "Scikit-learn", level: 72 },
+        { name: "LLMs, RAG & NLP", level: 80 },
+      ],
+    },
+    {
+      title: "Cloud, DevOps & Tools",
+      skills: [
+        { name: "Docker", level: 85 },
+        { name: "Kubernetes", level: 80 },
+        { name: "CI/CD Pipelines", level: 75 },
+        { name: "Git & GitHub", level: 92 },
+        { name: "AWS (EC2, IAM, S3, RDS)", level: 78 },
       ],
     },
   ];
@@ -102,15 +80,15 @@ const SkillsSection = () => {
             My <span className="gradient-text">Tech Stack</span>
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            Primary: Java, Spring Boot, Microservices, RESTful APIs, Maven, Spring Data JPA, Hibernate, PostgreSQL, MySQL, MongoDB, Kafka, Spring Security, JWT, JUnit, Mockito, OOP (SOLID), Design Patterns, DSA
+            Primary Skills reflecting the tech stack across Backend, Frontend, Cloud, and AI Data workflows.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}
-              className="p-6 rounded-2xl glass-card"
+              className={`p-6 rounded-2xl glass-card md:col-span-1 col-span-1 ${categoryIndex < 3 ? 'lg:col-span-4' : 'lg:col-span-3'}`}
             >
               <h3 className="text-xl font-semibold mb-6 flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-primary" />
