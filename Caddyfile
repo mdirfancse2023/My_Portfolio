@@ -4,14 +4,19 @@
 }
 
 # Your public domain
-app.34.180.9.45.sslip.io {
+portfolio.34.180.9.45.sslip.io {
     root * /usr/share/caddy
     encode gzip
     try_files {path} /index.html
     file_server
 }
 
+# Old domain redirect
+app.34.180.9.45.sslip.io {
+    redir https://portfolio.34.180.9.45.sslip.io{uri}
+}
+
 # Also serve on HTTP for healthchecks or IP access, redirecting to HTTPS
 http://34.180.9.45 {
-    redir https://app.34.180.9.45.sslip.io{uri}
+    redir https://portfolio.34.180.9.45.sslip.io{uri}
 }
