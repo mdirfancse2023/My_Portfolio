@@ -25,7 +25,7 @@ const EducationSection = () => {
 
   return (
     <section id="education" className="section-container">
-      <div className="text-center mb-16">
+      <div className="text-center mb-8">
         <span className="text-primary font-mono text-sm">05 — Education</span>
         <h2 className="section-title mt-4">
           My <span className="gradient-text">Education</span>

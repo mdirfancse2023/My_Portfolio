@@ -56,7 +56,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="section-container overflow-x-hidden">
-      <div className="text-center mb-8 md:mb-16">
+      <div className="text-center mb-8 md:mb-8">
         <span className="text-primary font-mono text-sm">06 — Contact</span>
         <h2 className="section-title mt-4">
           Let's <span className="gradient-text">Connect</span>

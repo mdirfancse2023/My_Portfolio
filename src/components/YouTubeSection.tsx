@@ -26,7 +26,7 @@ const YouTubeSection = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-accent/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <span className="text-primary font-mono text-sm">05 — Content</span>
           <h2 className="section-title mt-4">
             Teaching on <span className="gradient-text-accent">VirtualGyans</span>
@@ -37,7 +37,7 @@ const YouTubeSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-3 md:gap-6 max-w-2xl mx-auto mb-12 md:mb-16">
+        <div className="grid grid-cols-3 gap-3 md:gap-6 max-w-2xl mx-auto mb-12 md:mb-8">
           {stats.map((stat) => (
             <div
               key={stat.label}

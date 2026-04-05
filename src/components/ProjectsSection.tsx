@@ -39,7 +39,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="section-container overflow-hidden">
-      <div className="text-center mb-12 md:mb-16">
+      <div className="text-center mb-12 md:mb-8">
         <span className="text-primary font-mono text-sm">03 — Projects</span>
         <h2 className="section-title mt-4">
           Featured <span className="gradient-text">Work</span>

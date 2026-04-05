@@ -145,15 +145,15 @@
   }
 
   .section-container {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-20 w-full;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 py-8 md:py-12 w-full;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-4;
+    @apply text-3xl md:text-4xl font-bold mb-3;
   }
 
   .section-subtitle {
-    @apply text-muted-foreground text-lg mb-12;
+    @apply text-muted-foreground text-lg mb-8;
   }
 }
 
