@@ -2,7 +2,6 @@ services:
   - type: web
     name: myportfolio
     runtime: static
-    plan: free
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
     autoDeployTrigger: commit
