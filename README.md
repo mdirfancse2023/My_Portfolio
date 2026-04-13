@@ -56,7 +56,45 @@ docker build -t your-dockerhub-username/myportfolio:latest .
 docker run -p 8080:80 your-dockerhub-username/myportfolio:latest
 ```
 
-## GKE + GitHub Actions deployment
+## Render deployment
+
+This app is a Vite frontend, so Render can host it as a Static Site. The repo now includes [`render.yaml`](./render.yaml) with:
+
+- `npm ci && npm run build`
+- publish directory `dist`
+- SPA rewrite from `/*` to `/index.html`
+
+### Required Render environment variables
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
+
+### Deploy steps
+
+1. Push this repo to GitHub/GitLab/Bitbucket.
+2. In Render, select `New` -> `Blueprint`.
+3. Connect the repo and let Render read `render.yaml`.
+4. Add the two `VITE_...` environment variables above when prompted.
+5. Deploy.
+
+If you create the Static Site manually instead of using the Blueprint, use:
+
+- Build Command: `npm ci && npm run build`
+- Publish Directory: `dist`
+- Rewrite Rule: `/*` -> `/index.html`
+
+### After the first Render deploy
+
+The chatbot edge function sends your frontend URL to OpenRouter using the `APP_ORIGIN` secret. After Render gives you a URL such as `https://your-site.onrender.com`, update the secret and redeploy the chat function:
+
+```sh
+supabase secrets set APP_ORIGIN=https://your-site.onrender.com
+supabase functions deploy chat
+```
+
+If you later add a custom domain in Render, update `APP_ORIGIN` again to that final HTTPS URL.
+
+## Legacy GKE + GitHub Actions deployment
 
 This repo includes:
 
