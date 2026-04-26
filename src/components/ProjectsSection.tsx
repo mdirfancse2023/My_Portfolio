@@ -20,8 +20,8 @@ const ProjectsSection = () => {
       featured: true,
     },
     {
-      title: "AI Mental Health Assistant",
-      subtitle: "24/7 Personal Mental Coach",
+      title: "AI Health Assistant",
+      subtitle: "24/7 Personal Health Coach",
       points: [
         "Designed and developed this system using Angular and FastAPI, enabling real-time conversational support for users",
         "Implemented NLP-based emotion detection pipeline, classifying user inputs into emotional categories (e.g., stress, sadness) to drive context-aware response generation",
@@ -30,9 +30,21 @@ const ProjectsSection = () => {
         "Designed and analyzed a feedback-driven evaluation system, achieving ~68% positive response rate and generating actionable insights on user behavior patterns",
       ],
       tech: ["Angular", "FastAPI", "Python", "NLP", "PostgreSQL", "Chart.js"],
-      github: "https://github.com/mdirfancse2023",
-      liveLink: "http://health.136.115.35.202.sslip.io/",
+      github: "https://github.com/mdirfancse2023/AI_Health_Assistent",
+      liveLink: "https://mental-health-app-c6g1.onrender.com/",
       youtubeEmbed: "DZSC1apUFfI",
+      featured: true,
+    },
+    {
+      title: "SGAD Frontend",
+      subtitle: "Render-hosted frontend demo",
+      points: [
+        "Built a modern, responsive frontend interface deployed to Render",
+        "Designed intuitive navigation and interactive UI components for better user engagement",
+        "Optimized the demo for accessibility and mobile-first browsing",
+      ],
+      tech: ["Frontend", "Responsive Design", "Render", "User Experience"],
+      liveLink: "https://frontend-sgad.onrender.com/",
       featured: true,
     },
   ];
@@ -58,16 +70,25 @@ const ProjectsSection = () => {
               index % 2 === 1 ? 'lg:flex-row-reverse' : ''
             }`}
           >
-            {/* Demo Video */}
+            {/* Demo Video or Live Demo Placeholder */}
             <div className={`order-1 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
               <div className="rounded-2xl overflow-hidden border border-border shadow-lg">
-                <iframe
-                  src={`https://www.youtube.com/embed/${project.youtubeEmbed}`}
-                  title={`${project.title} Demo`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full aspect-video"
-                />
+                {project.youtubeEmbed ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${project.youtubeEmbed}`}
+                    title={`${project.title} Demo`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full aspect-video"
+                  />
+                ) : (
+                  <div className="min-h-[18rem] flex items-center justify-center bg-secondary/10 text-muted-foreground text-sm md:text-base px-6 py-8">
+                    <div className="text-center">
+                      <p className="font-medium">Live demo available</p>
+                      <p className="mt-2 text-xs text-muted-foreground">Open the project link to view the frontend demo.</p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 

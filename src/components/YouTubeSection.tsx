@@ -27,7 +27,7 @@ const YouTubeSection = () => {
 
       <div className="relative z-10 section-container">
         <div className="text-center mb-8">
-          <span className="text-primary font-mono text-sm">05 — Content</span>
+          <span className="text-primary font-mono text-sm">08 — Content</span>
           <h2 className="section-title mt-4">
             Teaching on <span className="gradient-text-accent">VirtualGyans</span>
           </h2>

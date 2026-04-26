@@ -12,7 +12,7 @@ const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat`;
 const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: "Hi! I'm Irfan's AI assistant. Ask me anything about his skills, projects, or experience!" }
+    { role: "assistant", content: "Hi! I'm Irfan's AI assistant. I answer questions using his latest resume, skills, and project details." }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -218,7 +218,7 @@ const AIChatbot = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-sm">Irfan's AI Assistant</h3>
-                <p className="text-xs text-muted-foreground">Ask me anything!</p>
+                <p className="text-xs text-muted-foreground">Answers are based on the latest resume and portfolio details.</p>
               </div>
             </div>
           </div>

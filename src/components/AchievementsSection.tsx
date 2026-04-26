@@ -13,7 +13,7 @@ const AchievementsSection = () => {
   return (
     <section id="achievements" className="section-container">
       <div className="text-center mb-8">
-        <span className="text-primary font-mono text-sm">06 — Achievements</span>
+        <span className="text-primary font-mono text-sm">07 — Achievements</span>
         <h2 className="section-title mt-4">
           My <span className="gradient-text">Achievements</span>
         </h2>
