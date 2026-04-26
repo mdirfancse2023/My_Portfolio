@@ -35,18 +35,6 @@ const ProjectsSection = () => {
       youtubeEmbed: "DZSC1apUFfI",
       featured: true,
     },
-    {
-      title: "SGAD Frontend",
-      subtitle: "Render-hosted frontend demo",
-      points: [
-        "Built a modern, responsive frontend interface deployed to Render",
-        "Designed intuitive navigation and interactive UI components for better user engagement",
-        "Optimized the demo for accessibility and mobile-first browsing",
-      ],
-      tech: ["Frontend", "Responsive Design", "Render", "User Experience"],
-      liveLink: "https://frontend-sgad.onrender.com/",
-      featured: true,
-    },
   ];
 
   return (

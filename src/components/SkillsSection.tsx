@@ -1,13 +1,24 @@
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: "Backend",
+      title: "Languages",
       skills: [
         { name: "Java", level: 95 },
+        { name: "TypeScript", level: 92 },
+        { name: "JavaScript", level: 90 },
+        { name: "Python", level: 85 },
+        { name: "SQL", level: 88 },
+      ],
+    },
+    {
+      title: "Backend & Frameworks",
+      skills: [
         { name: "Spring Boot", level: 93 },
-        { name: "Microservices Architecture", level: 90 },
+        { name: "Spring MVC", level: 90 },
+        { name: "Microservices", level: 90 },
         { name: "REST APIs", level: 95 },
-        { name: "Spring Data JPA & Hibernate", level: 90 },
+        { name: "Spring Data JPA", level: 90 },
+        { name: "Hibernate", level: 88 },
         { name: "Maven", level: 88 },
       ],
     },
@@ -16,8 +27,8 @@ const SkillsSection = () => {
       skills: [
         { name: "React", level: 90 },
         { name: "Angular", level: 85 },
-        { name: "TypeScript", level: 92 },
-        { name: "HTML5 / CSS3", level: 90 },
+        { name: "HTML5", level: 90 },
+        { name: "CSS3", level: 90 },
         { name: "Tailwind CSS", level: 82 },
       ],
     },
@@ -43,32 +54,23 @@ const SkillsSection = () => {
       ],
     },
     {
-      title: "AI, Data & ML",
-      skills: [
-        { name: "LLMs & RAG", level: 85 },
-        { name: "NLP", level: 82 },
-        { name: "Python", level: 85 },
-        { name: "Pandas & NumPy", level: 80 },
-        { name: "Scikit-learn", level: 78 },
-      ],
-    },
-    {
       title: "Cloud & DevOps",
       skills: [
-        { name: "AWS", level: 82 },
+        { name: "AWS (EC2, S3, RDS, IAM)", level: 82 },
         { name: "Docker", level: 88 },
         { name: "Kubernetes", level: 82 },
-        { name: "CI/CD", level: 80 },
         { name: "GitHub Actions", level: 82 },
+        { name: "Postman", level: 80 },
       ],
     },
     {
-      title: "CS Fundamentals",
+      title: "AI / ML & CS",
       skills: [
-        { name: "DSA (650+ problems)", level: 92 },
-        { name: "OOP / SOLID", level: 90 },
-        { name: "Design Patterns", level: 88 },
-        { name: "Agile / SDLC", level: 85 },
+        { name: "LLM & RAG", level: 85 },
+        { name: "NLP", level: 82 },
+        { name: "Scikit-learn", level: 78 },
+        { name: "Pandas & NumPy", level: 80 },
+        { name: "DSA / Design Patterns", level: 92 },
       ],
     },
   ];
