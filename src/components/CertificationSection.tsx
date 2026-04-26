@@ -5,7 +5,8 @@ const CertificationSection = () => {
     {
       title: "AWS Certified Developer - Associate",
       issuer: "Amazon Web Services",
-      duration: "2024",
+      duration: "2026",
+      certificateLink: "https://www.credly.com/badges/432ed1ed-16ed-43dd-9864-aa8b17dfb2a0/linked_in_profile",
       description: [
         "Validated expertise in building, deploying, and debugging cloud applications on AWS.",
         "Covered EC2, S3, IAM, RDS, and serverless development best practices.",
@@ -13,8 +14,9 @@ const CertificationSection = () => {
     },
     {
       title: "Spring Boot 0 to 100 Cohort 4.0 [AI + DevOps]",
-      issuer: "Online Certification",
-      duration: "2024",
+      issuer: "Coding Shuttle",
+      duration: "2026",
+      certificateLink: "https://app.codingshuttle.com/certificate/verify/LPC123XT",
       description: [
         "Completed hands-on training in Spring Boot application development with DevOps and AI integrations.",
         "Learned production-ready deployment workflows, CI/CD, and scalable microservices design.",
@@ -51,6 +53,16 @@ const CertificationSection = () => {
                   </li>
                 ))}
               </ul>
+              {cert.certificateLink && (
+                <a
+                  href={cert.certificateLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-foreground"
+                >
+                  View Certification
+                </a>
+              )}
             </div>
           </div>
         ))}
