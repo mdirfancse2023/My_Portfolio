@@ -29,7 +29,7 @@ const CertificationSection = () => {
       <div className="text-center mb-8">
         <span className="text-primary font-mono text-sm">05 — Certifications</span>
         <h2 className="section-title mt-4 whitespace-nowrap">
-          Professional Certifications
+          My <span className="gradient-text">Certifications</span>
         </h2>
       </div>
 
