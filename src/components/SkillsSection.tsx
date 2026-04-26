@@ -101,11 +101,11 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {skillCategories.map((category) => (
             <div
               key={category.title}
-              className={`p-6 rounded-2xl glass-card md:col-span-1 col-span-1 ${categoryIndex < 3 ? 'lg:col-span-4' : 'lg:col-span-3'}`}
+              className="p-6 rounded-2xl glass-card"
             >
               <h3 className="text-xl font-semibold mb-6 flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-primary" />
