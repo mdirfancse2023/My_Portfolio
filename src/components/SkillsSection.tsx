@@ -102,7 +102,7 @@ const SkillsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {skillCategories.map((category) => (
+          {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}
               className="p-6 rounded-2xl glass-card"
