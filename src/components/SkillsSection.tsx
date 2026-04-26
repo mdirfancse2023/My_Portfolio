@@ -4,10 +4,10 @@ const SkillsSection = () => {
       title: "Languages",
       skills: [
         { name: "Java", level: 95 },
-        { name: "TypeScript", level: 92 },
         { name: "JavaScript", level: 90 },
-        { name: "Python", level: 85 },
+        { name: "TypeScript", level: 92 },
         { name: "SQL", level: 88 },
+        { name: "Python", level: 85 },
       ],
     },
     {
@@ -30,6 +30,16 @@ const SkillsSection = () => {
         { name: "HTML5", level: 90 },
         { name: "CSS3", level: 90 },
         { name: "Tailwind CSS", level: 82 },
+      ],
+    },
+    {
+      title: "Architecture",
+      skills: [
+        { name: "Distributed Systems", level: 88 },
+        { name: "Event-Driven Architecture", level: 86 },
+        { name: "API Gateway", level: 84 },
+        { name: "Spring Cloud", level: 82 },
+        { name: "Resilience4j", level: 80 },
       ],
     },
     {

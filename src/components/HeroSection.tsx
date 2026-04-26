@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { ArrowDown, Download, Github, Linkedin, Mail, Code2, Trophy, Phone } from "lucide-react";
 
 const roles = [
-  { title: "Backend: Java, Spring Boot, Microservices, REST APIs, Spring Data JPA", color: "text-rose-400" },
-  { title: "Frontend: React, Angular, TypeScript, HTML5, Tailwind CSS", color: "text-pink-400" },
-  { title: "Databases & Messaging: PostgreSQL, MySQL, MongoDB, Redis, Kafka, RabbitMQ", color: "text-violet-400" },
-  { title: "AI & Data: LLMs, RAG, NLP, Python, Scikit-learn", color: "text-teal-300" },
-  { title: "Cloud & DevOps: AWS, Docker, Kubernetes, GitHub Actions", color: "text-cyan-400" },
-  { title: "Architecture: Distributed Systems, API Gateway, Spring Cloud, Resilience4j", color: "text-indigo-400" },
-  { title: "Security & Testing: Spring Security, JWT, OAuth2, OpenID Connect, JUnit", color: "text-emerald-400" },
+  { title: "Languages: Java, JavaScript, TypeScript, SQL, Python", color: "text-rose-400" },
+  { title: "Backend & Frameworks: Spring Boot, Spring MVC, Microservices, REST APIs, Spring Data JPA, Hibernate, Maven", color: "text-pink-400" },
+  { title: "Frontend: React, Angular, HTML5, CSS3, Tailwind CSS", color: "text-violet-400" },
+  { title: "Architecture: Distributed Systems, Event-Driven, API Gateway, Spring Cloud, Resilience4j", color: "text-teal-300" },
+  { title: "Databases & Messaging: PostgreSQL, MySQL, MongoDB, Redis, Apache Kafka, RabbitMQ", color: "text-cyan-400" },
+  { title: "Security & Testing: Spring Security, JWT, OAuth2, OpenID Connect, JUnit, Mockito", color: "text-indigo-400" },
+  { title: "Cloud & DevOps: AWS EC2/S3/RDS/IAM, Docker, Kubernetes, CI/CD, GitHub Actions, Postman", color: "text-emerald-400" },
+  { title: "AI / ML & CS: LLM, RAG, NLP, Scikit-learn, Pandas, NumPy, DSA, SOLID", color: "text-sky-400" },
 ];
 
 const HeroSection = () => {
