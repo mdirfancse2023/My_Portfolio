@@ -108,5 +108,16 @@ jobs:
             --query "[].{name:name,active:properties.active,state:properties.runningState,traffic:properties.trafficWeight}" \
             --output table
 
-          curl --fail --show-error --location --head \
-            https://www.virtualgyans.tech/mdirfanportfolio
+          # Fetch FQDN dynamically and verify the container app directly (bypassing DNS propagation/caching issues)
+          FQDN=$(az containerapp show \
+            --name "$AZURE_CONTAINER_APP_NAME" \
+            --resource-group "$AZURE_RESOURCE_GROUP" \
+            --query "properties.configuration.ingress.fqdn" \
+            -o tsv)
+          
+          echo "Verifying container app directly via FQDN: https://$FQDN/"
+          curl --fail --show-error --location --head "https://$FQDN/"
+
+          # Also attempt to verify the custom domain, but do not fail the workflow if it fails to resolve (due to DNS propagation)
+          echo "Verifying custom domain: https://portfolio.virtualgyans.tech/"
+          curl --show-error --location --head "https://portfolio.virtualgyans.tech/" || echo "Warning: Custom domain could not be resolved or reached. This may be due to DNS propagation."

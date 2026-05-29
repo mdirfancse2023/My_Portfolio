@@ -6,13 +6,8 @@
   "customDomains": [
     {
       "bindingType": "SniEnabled",
-      "certificateId": "/subscriptions/477a9591-e616-49d0-972b-b2e53c906ad1/resourceGroups/myportfolio-rg/providers/Microsoft.App/managedEnvironments/myportfolio-env/managedCertificates/mc-myportfolio-en-virtualgyans-tec-5594",
-      "name": "virtualgyans.tech"
-    },
-    {
-      "bindingType": "SniEnabled",
-      "certificateId": "/subscriptions/477a9591-e616-49d0-972b-b2e53c906ad1/resourceGroups/myportfolio-rg/providers/Microsoft.App/managedEnvironments/myportfolio-env/managedCertificates/mc-myportfolio-en-www-virtualgyans-1000",
-      "name": "www.virtualgyans.tech"
+      "certificateId": "/subscriptions/477a9591-e616-49d0-972b-b2e53c906ad1/resourceGroups/myportfolio-rg/providers/Microsoft.App/managedEnvironments/myportfolio-env/managedCertificates/mc-portfolio-virtualgyans-tech",
+      "name": "portfolio.virtualgyans.tech"
     }
   ],
   "exposedPort": 0,

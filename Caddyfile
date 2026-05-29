@@ -5,13 +5,15 @@
 
 # Azure Container Apps routes traffic to the container over HTTP and supplies
 # the public TLS certificate at the ingress layer.
-:80 {
+
+# Serve the portfolio site only for portfolio.virtualgyans.tech
+http://portfolio.virtualgyans.tech {
     # Redirect /codexaai to the dedicated subdomain
     handle /codexaai* {
         redir https://codexaai.virtualgyans.tech{uri} permanent
     }
 
-    # Portfolio static files (everything else)
+    # Portfolio static files
     handle {
         root * /usr/share/caddy
         encode gzip
@@ -20,24 +22,23 @@
     }
 }
 
-# Your public domain
-portfolio.virtualgyans.tech {
-    root * /usr/share/caddy
-    encode gzip
-    try_files {path} /index.html
-    file_server
-}
+# Catch-all on port 80 for health checks, verification FQDN, and redirecting other hostnames
+:80 {
+    # Detect if the request is for the Azure Container App FQDN directly (needed for deployment verification in CI/CD)
+    @is_azure_fqdn {
+        header_regexp Host ^myportfolio\..*\.azurecontainerapps\.io$
+    }
 
-# Old domain redirects
-portfolio.34.180.9.45.sslip.io {
-    redir https://portfolio.virtualgyans.tech{uri}
-}
+    # Serve the site directly for the Azure FQDN
+    handle @is_azure_fqdn {
+        root * /usr/share/caddy
+        encode gzip
+        try_files {path} /index.html
+        file_server
+    }
 
-app.34.180.9.45.sslip.io {
-    redir https://portfolio.virtualgyans.tech{uri}
-}
-
-# Also serve on HTTP for healthchecks or IP access, redirecting to HTTPS
-http://34.180.9.45 {
-    redir https://portfolio.virtualgyans.tech{uri}
+    # For all other domains (e.g. www.virtualgyans.tech, virtualgyans.tech, sslip.io, etc.), do not serve the site or redirect; return an error instead
+    handle {
+        respond "Not Found" 404
+    }
 }
