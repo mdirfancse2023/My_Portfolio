@@ -6,24 +6,9 @@
 # Azure Container Apps routes traffic to the container over HTTP and supplies
 # the public TLS certificate at the ingress layer.
 :80 {
-    # Reverse proxy to Codexa AI on AKS
-    handle /codexaai/api/* {
-        uri strip_prefix /codexaai/api
-        reverse_proxy http://20.204.189.207 {
-            header_up Host api.20.204.189.207.sslip.io
-        }
-    }
-    handle /codexaai/* {
-        uri strip_prefix /codexaai
-        reverse_proxy http://20.204.189.207 {
-            header_up Host codexa.20.204.189.207.sslip.io
-        }
-    }
-    handle /codexaai {
-        uri strip_prefix /codexaai
-        reverse_proxy http://20.204.189.207 {
-            header_up Host codexa.20.204.189.207.sslip.io
-        }
+    # Redirect /codexaai to the dedicated subdomain
+    handle /codexaai* {
+        redir https://codexaai.virtualgyans.tech{uri} permanent
     }
 
     # Portfolio static files (everything else)
