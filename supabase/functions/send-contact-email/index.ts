@@ -20,6 +20,10 @@ interface ContactEmailRequest {
   message: string;
 }
 
+interface ResendEmailResponse {
+  error?: unknown;
+}
+
 // Simple in-memory rate limiting (resets when function cold starts)
 // Limits: 5 requests per IP per 10 minutes
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -145,8 +149,9 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     // Resend returns 200 with an error object for failures; treat that as a failure.
-    if ((emailResponse as any)?.error) {
-      console.error("Resend error:", (emailResponse as any).error);
+    const resendResult = emailResponse as ResendEmailResponse;
+    if (resendResult.error) {
+      console.error("Resend error:", resendResult.error);
       // Return generic error message - don't expose internal details
       return new Response(
         JSON.stringify({ error: "Unable to send message. Please try again later." }),
@@ -166,7 +171,7 @@ const handler = async (req: Request): Promise<Response> => {
         ...corsHeaders,
       },
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error in send-contact-email function:", error);
     // Return generic error message - don't expose internal details
     return new Response(

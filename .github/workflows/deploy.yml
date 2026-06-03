@@ -81,6 +81,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          file: deploy/azure/Dockerfile
           push: true
           build-args: |
             VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}

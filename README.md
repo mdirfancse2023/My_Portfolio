@@ -2,6 +2,15 @@
 
 React + Vite portfolio app with Supabase Edge Functions (contact + chatbot).
 
+## What is kept in this repo
+
+- `src/` - portfolio frontend source
+- `public/` - static assets served by Vite/Caddy
+- `supabase/functions/` - chatbot and contact form Edge Functions
+- `.github/workflows/deploy.yml` - Azure CI/CD pipeline
+- `deploy/azure/` - production container files for Azure Container Apps
+- `.azure/README.md` - live Azure resource notes
+
 ## Local development
 
 ```sh
@@ -52,37 +61,25 @@ If you keep `from: "Portfolio Contact <onboarding@resend.dev>"`, delivery works 
 ## Docker build
 
 ```sh
-docker build -t your-dockerhub-username/myportfolio:latest .
+docker build -f deploy/azure/Dockerfile -t your-dockerhub-username/myportfolio:latest .
 docker run -p 8080:80 your-dockerhub-username/myportfolio:latest
 ```
 
-## Legacy GKE + GitHub Actions deployment
+## Azure CI/CD
 
-This repo includes:
+This repo deploys to Azure Container Apps through `.github/workflows/deploy.yml`.
 
-- `Dockerfile` for production build
-- `k8s/deployment.yaml`
-- `k8s/service.yaml`
-- `.github/workflows/deploy-gke.yml`
+Required GitHub repository secrets:
 
-### Required GitHub repository secrets
-
-- `DOCKERHUB_USERNAME`
-- `DOCKERHUB_TOKEN`
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_PUBLISHABLE_KEY`
 - `VITE_SUPABASE_PROJECT_ID`
-- `GKE_PROJECT`
-- `GKE_CLUSTER`
-- `GKE_REGION`
-- `GCP_WIF_PROVIDER` (Workload Identity Provider resource name)
-- `GCP_SA_EMAIL` (Service account email used by GitHub Actions)
 
-### How it deploys
+On pull requests to `main`, GitHub Actions installs dependencies, runs tests, and builds the app.
 
-1. Build and push Docker image to Docker Hub
-2. Authenticate with GCP
-3. Pull GKE credentials
-4. Apply Kubernetes manifests and rollout deployment
+On pushes to `main`, it also:
 
-On each push to `main`, GitHub Actions deploys the latest version automatically.
+1. Logs in to Azure using OIDC.
+2. Builds and pushes the Docker image to Azure Container Registry.
+3. Updates the `myportfolio` Azure Container App.
+4. Verifies the deployed app endpoint.
